@@ -17,6 +17,7 @@ const words = [
   "mahesh loves bujji",
   "geetha i love you",
   "geetha",	
+  "ramcharntej",
 ];
 
 let randomWord;
