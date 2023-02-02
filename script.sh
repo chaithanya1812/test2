@@ -1,5 +1,4 @@
 #!/bin/bash
-mvn clean package
 docker rm -f chaitu chaitu1
 docker rmi test
 docker build -t test .
