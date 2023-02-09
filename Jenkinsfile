@@ -13,7 +13,7 @@ pipeline{
         }
         stage('checkout'){
             steps{
-                git branch: 'FIRST', url: 'https://github.com/chaithanya1812/test1.git'
+                git branch: 'FIRST', url: 'https://github.com/chaithanya1812/test2.git'
             }
         }
         stage('BUILD'){
@@ -51,7 +51,7 @@ pipeline{
                 script{
                     def runcontainer = "docker run -d --name c1 -p 8091:8080 3.109.60.48:8083/typing-game:latest"
                     sshagent(['ec2-user']) {
-                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@13.234.48.130 $runcontainer'
+                        sh "ssh -o StrictHostKeyChecking=no ec2-user@13.234.48.130 $runcontainer"
                       }
                     
                     
