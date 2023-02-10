@@ -36,7 +36,8 @@ pipeline{
         stage('NEXUS LOGIN'){
             steps{
                 withCredentials([string(credentialsId: 'nexuslogin', variable: 'NEXUS')]) {
-                sh 'docker login -u admin --password $NEXUS 3.109.60.48:8083'
+                sh 'docker login -u admin --password $NEXUS 3.109.60.48:8083' 
+                    //  Always use single Quations for credentialsId login
             }
                sh 'docker push 3.109.60.48:8083/typing-game:latest'
                sh 'docker push 3.109.60.48:8083/typing-game:$BUILD_ID'
