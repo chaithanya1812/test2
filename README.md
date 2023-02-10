@@ -14,4 +14,5 @@
   }
   ---------------------------------------
   systemctl restart docker
+  docker login -u admin --password 12345 3.109.60.48:8083
 ```
