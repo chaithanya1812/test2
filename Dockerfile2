@@ -1,0 +1,9 @@
+FROM maven:3.8-openjdk-18-slim as build
+RUN mkdir -p  /app/maven
+COPY . /app/maven
+WORKDIR /app/maven
+RUN mvn clean package
+
+FROM tomcat:8.0.20-jre8
+COPY --from=build /app/maven/target/Typing-Game.war  /usr/local/tomcat/webapps/Typing-Game.war
+WORKDIR /usr/local/tomcat/webapps
