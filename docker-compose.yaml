@@ -1,9 +1,0 @@
-version: '3.8'
-services:
-   game:
-      build:
-        context: .
-      image: goop1
-      ports:
-       - 8095:8080
-      container_name: cleargame1
